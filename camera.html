@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget TCG</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="loadAllCards()">
+    <header>
+        <div class="wraper aligh-items">
+            <div class="logo">
+                <img src="gadget_tcg.png">
+            </div>
+            <div class="menu">
+                <a class="fill-menu" href="index.html">Principal</a>
+                <a class="border-menu" href="search.html">Procurar</a>
+                <a class="border-menu" href="camera.html">Procurar com Câmera</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Tirar Foto</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="captureBtn">Capturar Foto</button>
+    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+
+    <script>
+        // Obtendo referência aos elementos de vídeo, botão e canvas
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const captureButton = document.getElementById('captureBtn');
+
+        // Obtendo acesso à câmera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                // Associando o fluxo de vídeo ao elemento de vídeo
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error("Erro ao acessar a câmera: ", error);
+            });
+
+        // Adicionando um ouvinte de evento para o botão de captura
+        captureButton.addEventListener('click', function () {
+            // Desenhando o quadro atual do vídeo no canvas
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            // Convertendo a imagem do canvas para um URL de dados (base64)
+            const imageDataUrl = canvas.toDataURL('image/png');
+            // Exibindo a imagem em uma nova janela ou fazendo algo com ela
+            window.open(imageDataUrl);
+        });
+    </script>
+</body>
+</html>
