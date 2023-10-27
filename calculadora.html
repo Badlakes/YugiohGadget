@@ -8,7 +8,7 @@
     <link rel="icon" href="gadget_fav.ico" type="image/x-icon">
     <link rel="shortcut icon" href="gadget_fav.ico" type="image/x-icon">
 </head>
-<body onload="loadAllCards()">
+<body><!--onload="loadAllCards()"-->
     <header>
         <div class="wraper aligh-items">
             <div class="logo">
@@ -23,25 +23,16 @@
             </div>
         </div>
     </header>
-
-    <section class="main">
-        <div class="wraper">
-            <div class="container">
-                <label style="color:white;" for="searchInput">Nome da Carta:</label>
-                <input type="text" id="searchInput">
-                <label  style="color:white;" for="languageSelect">Idioma de Pesquisa:</label>
-                <select id="languageSelect">
-                    <option value="pt">Português</option>
-                    <option value="en">Inglês</option>
-                    <option value="fr">Francês</option>
-                    <option value="de">Alemão</option>
-                    <option value="it">Italiano</option>
-                </select>
-                <button onclick="searchCards()">Buscar</button>
-                <ul id="cardList"></ul>
-            </div>
-        </div>
-    </section>
+    <br>
+    <div class="wraper aligh-items">
+    <P style="color:white;">Exemplo de calculadora: <a class="border-menu" style="color:white;" href="https://www.yugiohcalculator.com">https://www.yugiohcalculator.com</a></P>
+    </div>
+    <div class="wraper aligh-items">
+    <p style="color:white;">Este exemplo é puramente demonstrativo e não representa o modelo final planejado</P>
+    </div>
+    <div class="wraper aligh-items">
+    <p style="color:white;">(Crédito: https://github.com/jacksonrayhamilton)</P>
+    </div>
     <script src="script.js"></script>
-    </body>
-    </html>
+</body>
+</html>
