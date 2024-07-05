@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadget TCG</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="gadget_fav.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="gadget_fav.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/gadget_fav.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/gadget_fav.ico" type="image/x-icon">
 </head>
-<body><!--onload="loadAllCards()"-->
+<body onload="initialize()">
     <header>
-        <div class="wraper aligh-items">
+        <div class="wrapper align-items">
             <div class="logo">
-                <img src="gadget_tcg.png">
+                <img src="images/gadget_tcg.png" alt="Gadget TCG">
             </div>
             <div class="menu">
                 <a class="fill-menu" href="index.html">Principal</a>
@@ -25,27 +25,14 @@
     </header>
 
     <section class="main">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="wraper">
-            <div class="descricao_topo">
-                <h1 style="color:#a6f3c9;">O DISPOSITIVO INDISPENSÁVEL PARA OS DUELOS</h1>
-                <b style="color:white;">Jogue como nunca, se destaque como sempre</b>
-                <p style="color:white;">Com a ferramenta mais versátil</p>
-            </div>
-                <div class="imagem-com-fade">
-                    <div class="conteudo-sobre-imagem">
-                    <!--<img src="gold_gadget_big.png" alt="Descrição da Imagem">-->
-                    </div>
-                </div>
+        <div class="wrapper">
+            <div class="container">
+                <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Procurar cartas...">
+                <ul id="cardList"></ul>
             </div>
         </div>
     </section>
 
-
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

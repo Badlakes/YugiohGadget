@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadget TCG</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="gadget_fav.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="gadget_fav.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="images/gadget_fav.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/gadget_fav.ico" type="image/x-icon">
 </head>
-<body><!--onload="loadAllCards()"-->
+<body onload="loadAllCards()">
     <header>
-        <div class="wraper aligh-items">
+        <div class="wrapper align-items">
             <div class="logo">
-                <img src="gadget_tcg.png">
+                <img src="images/gadget_tcg.png" alt="Gadget TCG">
             </div>
             <div class="menu">
                 <a class="fill-menu" href="index.html">Principal</a>
-                <a class="border-menu" href="search.html">Procurar</a>
-                <a class="border-menu" href="camera.html">Câmera</a>
-                <a class="border-menu" href="leitor.html">Leitor</a>
                 <a class="border-menu" href="calculadora.html">Calculadora</a>
             </div>
         </div>
     </header>
-    <br>
-    <div class="wraper aligh-items">
-    <P style="color:white;">Exemplo de calculadora: <a class="border-menu" style="color:white;" href="https://www.yugiohcalculator.com">https://www.yugiohcalculator.com</a></P>
-    </div>
-    <div class="wraper aligh-items">
-    <p style="color:white;">Este exemplo é puramente demonstrativo e não representa o modelo final planejado</P>
-    </div>
-    <div class="wraper aligh-items">
-    <p style="color:white;">(Crédito: https://github.com/jacksonrayhamilton)</P>
-    </div>
-    <script src="script.js"></script>
+
+    <section class="main">
+        <div class="wrapper">
+            <div class="container">
+                <div class="wraper aligh-items">
+                    <P style="color:black;">Exemplo de calculadora: <a class="border-menu" style="color:white;" href="https://www.yugiohcalculator.com">https://www.yugiohcalculator.com</a></P>
+                    </div>
+                    <div class="wraper aligh-items">
+                    <p style="color:black;">Este exemplo é puramente demonstrativo e não representa o modelo final planejado</P>
+                    </div>
+                    <div class="wraper aligh-items">
+                    <p style="color: black;">(Crédito: https://github.com/jacksonrayhamilton)</P>
+                    </div>
+                    <script src="script.js"></script>
+            </div>
+        </div>
+    </section>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
