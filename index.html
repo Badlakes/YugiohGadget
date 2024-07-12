@@ -5,31 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gadget TCG</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="icon" href="images/gadget_fav.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/gadget_fav.ico" type="image/x-icon">
 </head>
-<body onload="initialize()">
+<body>
     <header>
         <div class="wrapper align-items">
             <div class="logo">
                 <img src="images/gadget_tcg.png" alt="Gadget TCG">
             </div>
             <div class="menu">
-                <a class="fill-menu" href="index.html">Principal</a>
-                <a class="border-menu" href="calculadora.html">Calculadora</a>
+                <button class="" id="homeBtn">Menu</button>
+                <button class="" id="dataBtn">Pesquisa de Cartas</button>
+                <button class="" id="calcBtn">Calculadora</button>
             </div>
         </div>
     </header>
 
-    <section class="main">
-        <div class="wrapper">
-            <div class="container">
-                <input type="text" id="searchInput" onkeyup="searchCards()" placeholder="Procurar cartas...">
-                <ul id="cardList"></ul>
-            </div>
-        </div>
-    </section>
+    <div id="content">
+        <!-- Conteúdo da página selecionada -->
+    </div>
 
-    <script src="scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

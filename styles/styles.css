@@ -41,3 +41,113 @@
     height: 400px; /* Ajuste a altura conforme necessário */
     background: linear-gradient(to bottom, rgba(34, 33, 33, 0) 0%, rgba(34, 33, 33, 0)20%, rgba(34, 33, 33, 0)80%, rgba(255, 255, 255, 0) 100%), url('gold_gadget_big.png') center/cover no-repeat;
 }
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav button {
+    margin-right: 10px;
+}
+
+#content {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .calculator-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calc-display {
+        width: 80%;
+        font-size: 28px;
+    }
+
+    .calc-buttons {
+        grid-template-columns: repeat(4, 60px); 
+        gap: 15px; 
+    }
+
+    .calc-btn {
+        width: 60px; 
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .calc-btn.confirm,
+    .calc-btn.cancel {
+        width: 130px; 
+    }
+
+    .calculator-container {
+        display: flex;
+        justify-content: space-around; 
+    }
+
+    .calc-display.active {
+        background-color: lightblue; 
+    }
+}
+
+.calculator {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.calc-display {
+    width: 200px;
+    height: 50px;
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.calc-buttons {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 50px);
+    gap: 10px;
+    width: 100%; /* Garante que o contêiner da grade ocupe todo o espaço horizontal */
+}
+
+.calc-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.calc-btn.confirm {
+    grid-column: span 2;
+    width: 110px;
+    background-color: #0a0;
+}
+
+.calc-btn.cancel {
+    grid-column: span 2;
+    background-color: #a00;
+}
+
+.calc-display.active {
+    background-color: lightblue; 
+}
