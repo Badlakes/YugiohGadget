@@ -6,16 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const contentDiv = document.getElementById('content');
 
     document.getElementById('homeBtn').addEventListener('click', () => {
-        loadHome();
+        loadHome(contentDiv);
     });
 
     document.getElementById('dataBtn').addEventListener('click', () => {
-        loadDataTable();
+        loadDataTable(contentDiv);
     });
 
     document.getElementById('calcBtn').addEventListener('click', () => {
-        loadCalculator();
+        loadCalculator(contentDiv);
     });
 
-    loadHome();
+    loadHome(contentDiv);
 });

@@ -1,4 +1,4 @@
-function loadCalculator() {
+function loadCalculator(contentDiv) {
     contentDiv.innerHTML = `
         <div class="calculator-container">
             <!-- Calculadora 1 -->

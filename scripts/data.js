@@ -1,4 +1,4 @@
-function loadDataTable() {
+function loadDataTable(contentDiv) {
     contentDiv.innerHTML = `
         <table id="example" class="display" style="width:100%">
             <thead>
