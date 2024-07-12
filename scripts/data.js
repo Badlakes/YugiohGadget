@@ -1,4 +1,4 @@
-export function loadDataTable() {
+function loadDataTable() {
     contentDiv.innerHTML = `
         <table id="example" class="display" style="width:100%">
             <thead>
@@ -23,3 +23,5 @@ export function loadDataTable() {
         });
     });
 }
+
+export { loadDataTable };

@@ -1,4 +1,4 @@
-export function loadCalculator() {
+function loadCalculator() {
     contentDiv.innerHTML = `
         <div class="calculator-container">
             <!-- Calculadora 1 -->
@@ -75,7 +75,7 @@ export function loadCalculator() {
     });
     }
 
-export function handleButtonPress(value, totalDisplay, variableDisplay) {
+function handleButtonPress(value, totalDisplay, variableDisplay) {
     let currentInput = variableDisplay.value;
 
     //console.log(value);
@@ -122,3 +122,5 @@ export function handleButtonPress(value, totalDisplay, variableDisplay) {
 
     variableDisplay.value = currentInput;
 }
+
+export { loadCalculator };

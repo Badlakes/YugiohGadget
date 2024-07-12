@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const contentDiv = document.getElementById('content');
 
     document.getElementById('homeBtn').addEventListener('click', () => {
-        loadHome.loadHome();
+        loadHome();
     });
 
     document.getElementById('dataBtn').addEventListener('click', () => {
-        loadHome.loadDataTable();
+        loadDataTable();
     });
 
     document.getElementById('calcBtn').addEventListener('click', () => {
