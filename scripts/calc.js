@@ -75,7 +75,7 @@ export function loadCalculator() {
     });
     }
 
-function handleButtonPress(value, totalDisplay, variableDisplay) {
+export function handleButtonPress(value, totalDisplay, variableDisplay) {
     let currentInput = variableDisplay.value;
 
     //console.log(value);
