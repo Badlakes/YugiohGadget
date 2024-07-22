@@ -1,0 +1,248 @@
+#cardTable td {
+    width: 25%;
+}
+
+#cardTable img {
+    max-width: 100%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    width: 120px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.close {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#searchInput, .botao_generico, #cardTypeFilter, #searchBox {
+    width: 100%;
+    padding: 10px 6px;
+    margin-bottom: 10px;
+    border: 2px solid #a6f3c9;
+    color: rgb(54, 52, 52);
+    text-decoration: none;
+    display: inline-block;
+    background: none;
+}
+
+.imagem-com-fade {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, rgba(34, 33, 33, 0) 0%, rgba(34, 33, 33, 0) 20%, rgba(34, 33, 33, 0) 80%, rgba(255, 255, 255, 0) 100%), url('gold_gadget_big.png') center/cover no-repeat;
+}
+
+body, .card {
+    font-family: Arial, sans-serif;
+}
+
+nav button {
+    margin-right: 10px;
+}
+
+#content {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100px;
+    }
+    .calculator-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calc-display {
+        width: 80%;
+        font-size: 28px;
+    }
+
+    .calc-buttons {
+        grid-template-columns: repeat(4, 60px);
+        gap: 15px;
+    }
+
+    .calc-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .calc-btn.confirm,
+    .calc-btn.cancel {
+        width: 130px;
+    }
+
+    .calculator-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .calc-display.active {
+        background-color: lightblue;
+    }
+}
+
+.calculator {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.calc-display {
+    width: 200px;
+    height: 50px;
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.calc-buttons {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 50px);
+    gap: 10px;
+    width: 100%;
+}
+
+.calc-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.calc-btn.confirm {
+    grid-column: span 2;
+    width: 110px;
+    background-color: #0a0;
+}
+
+.calc-btn.cancel {
+    grid-column: span 2;
+    background-color: #a00;
+}
+
+.calc-display.active {
+    background-color: lightblue;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 98%;
+    max-height: 98vh;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 5vh;
+    overflow-y: auto;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+}
+
+.modal-header, .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.itens-filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#paginationControls button {
+    border: none;
+    color: #4bdd8d;
+    min-width: 40px;
+    text-align: center;
+    margin-right: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#paginationControls button:hover {
+    background-color: #4bdd8d;
+    color: rgb(36, 85, 126);
+}
+
+.page-number.current-page {
+    font-weight: bold;
+    color: rgb(73, 116, 25) !important;
+}
