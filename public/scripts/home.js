@@ -1,5 +1,5 @@
 function loadHome(contentDiv) {
-    contentDiv.innerHTML = '<h2>API YUGIOH GADGET!</h2><p>Versão atualizada 2.0!</p>';
+    contentDiv.innerHTML = '<h2>YUGIOH GADGET!</h2><p>New version!</p>';
 }
 
 export { loadHome };

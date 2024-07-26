@@ -15,10 +15,10 @@ function loadAndDisplayCards() {
                     <div class="itens-filter-container">
                         <input type="text" id="searchBox" placeholder="Buscar carta...">
                         <select id="cardTypeFilter">
-                            <option value="all">Filtrar por tipo</option>
-                            <option value="Monster Card">Monstros</option>
-                            <option value="Spell Card">Magias</option>
-                            <option value="Trap Card">Armadilhas</option>
+                            <option value="all">Filter by </option>
+                            <option value="Monster Card">Monsters</option>
+                            <option value="Spell Card">Spells</option>
+                            <option value="Trap Card">Traps</option>
                         </select>
                     </div>
 
@@ -103,16 +103,22 @@ function updateCardsDisplay(filterText = '', page = 1, cardType = 'all') {
 
         let cardsHTML = '';
         paginatedItems.forEach(card => {
-            cardsHTML += `<div class="card">
+            cardsHTML += `<div class="card" data-card-id="${card.id}">
                 <img src="${card.card_images[0].image_url}" alt="${card.name}" title="${card.name}">
             </div>`;
         });
         $('#cardsContainer').html(cardsHTML);
 
+        // Adicionar evento de clique às cartas
+        $('.card').click(function() {
+            const cardId = $(this).data('card-id');
+            const selectedCard = filteredData.find(card => card.id === cardId);
+            showCardDetailsModal(selectedCard);
+        });
+
         updatePaginationControls(filteredData.length, page, itemsPerPage);
     });
 }
-
 $(window).resize(function() {
     updateCardsDisplay(currentFilterText, currentPage, currentCardType);
 });
@@ -166,6 +172,65 @@ $('#firstPage').click(() => updateCardsDisplay($('#searchBox').val(), 1, current
 $('#lastPage').click(() => updateCardsDisplay($('#searchBox').val(), totalPages, currentCardType)); 
 $('#prevPage').click(() => updateCardsDisplay($('#searchBox').val(), currentPage - 1, currentCardType)); 
 $('#nextPage').click(() => updateCardsDisplay($('#searchBox').val(), currentPage + 1, currentCardType)); 
+}
+
+function showCardDetailsModal(card) {
+    const modal = document.getElementById('cardDetailsModal');
+    const container = document.getElementById('cardDetailsContainer');
+    console.log(card);
+    let cardDetailsHTML = `
+        <div class="card-details">
+            <div class="card-image">
+                <img src="${card.card_images[0].image_url}" alt="${card.name}">
+            </div>
+            <div class="card-info">
+                <h2>${card.name}</h2>
+                <p><strong>Card Type:</strong> ${card.type}</p>
+                <p><strong>Type:</strong> ${card.race}</p>
+                <p><strong>Description:</strong> ${card.desc}</p>
+    `;
+
+    if (card.type.includes('Monster')) {
+        cardDetailsHTML += `
+            <p><strong>Attribute:</strong> ${card.attribute || 'N/A'}</p>
+            <p><strong>ATK:</strong> ${card.atk || 'N/A'}</p>
+            <p><strong>DEF:</strong> ${card.def || 'N/A'}</p>`;
+    }
+
+    if (card.type.includes('Monster') && card.linkval===0) {
+        cardDetailsHTML +=`<p><strong>Level/Rank:</strong> ${card.level || card.rank}</p>`;
+    } else if (card.type.includes('Monster') && card.linkval>0) {
+        cardDetailsHTML +=`<p><strong>Link Rating :</strong> ${card.linkmarkers.length}</p>`;
+        cardDetailsHTML +=`<p><strong>Link Arrows :</strong> ${card.linkmarkers} </p>`;
+    }
+
+    cardDetailsHTML += `
+            <p><strong>Arquetype:</strong> ${card.archetype || 'N/A'}</p>
+            </div>
+            <div class="card-prices">
+                <h3>Prices:</h3>
+                <p><strong>Cardmarket:</strong> ${card.card_prices[0].cardmarket_price || 'N/A'}</p>
+                <p><strong>TCGPlayer:</strong> ${card.card_prices[0].tcgplayer_price || 'N/A'}</p>
+                <p><strong>Ebay:</strong> ${card.card_prices[0].ebay_price || 'N/A'}</p>
+                <p><strong>Amazon:</strong> ${card.card_prices[0].amazon_price || 'N/A'}</p>
+                <p><strong>CoolStuffInc:</strong> ${card.card_prices[0].coolstuffinc_price || 'N/A'}</p>
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = cardDetailsHTML;
+
+    modal.style.display = "block";
+
+    modal.querySelector('.close').addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
 }
 
 export { loadAndDisplayCards };
